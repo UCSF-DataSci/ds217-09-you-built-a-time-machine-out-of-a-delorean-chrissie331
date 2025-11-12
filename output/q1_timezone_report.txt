@@ -1,0 +1,12 @@
+
+Original timezone: The original data did not indicate the specfic timezone. The original data only included the specific dates. 
+
+Localize the data: We localized the data to UTC because UTC acts as the standard, allowing us to make necessary datetime conversions. We did this by using the pandas function pd.Timestamp and assigning it to UTC time.
+
+Conversion: Once we localized the data to UTC, I converted the timezone to U.S. Eastern time. We did this by using tz_convert and specifiying the U.S. Eastern timezone. 
+
+Issues: For example, if we did not localize to UTC first, we would have to deal with issues related to daylight savings such as an extra or one less hour. Localizing to UTC first results in more consistency when converting to different timezones. 
+
+Datetime before and after conversion: For example, before a datetime conversion, the datetime will show as 2023--3-12 12:00:00. After conversion, the datetime will show as 2023-3-12 5:00:00. This is because UTC is 5 hours ahead of U.S. Eastern time. 
+
+Why UTC is recommended as the base timezone: UTC is recommended as the base timezone for storing temporal data because it acts as a standard and is not affected by timezones and issues with DST. 
