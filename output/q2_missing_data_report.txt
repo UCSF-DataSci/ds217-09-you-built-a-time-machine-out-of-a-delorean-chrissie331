@@ -1,0 +1,46 @@
+
+How many missing values did you find: There are 323 missing values from the patient_monthly_vitals dataset. 
+
+What percentage of data was missing: The percentage of data that was missing was around 96.41 in the patient_monthly_vitals dataset. 
+
+Which method did you use to fill missing values: For this lab, I experiemnted with different types of methods to fill missing values in my dataset. I used ffill, bfill, interpolation methods, and rolling mean for imputation. The forward fill and backward fill basically filled in the missing
+values. The interpolation method estimates the missing values. Instead of forward filling or backward filling, it calculates a value that can smoothly fit into the dataset. The rolling mean for impuation method
+calculates an averge within a fixed set of observations. In the end I decided that the best method is rolling mean imputation. 
+
+Why did you choose that method: I chose this method because it takes the average of a fixed set of observations, which creates a more realistic pattern. Even though forward fill, backward fill, and interpolation methods are also great methods, rolling mean imputation seemed like it would create a more
+realistic pattern in the dataset. Interpolation is a good method because it preserves overall trends and works well for continuous variables. However, the information can be misleading if the data is not linear. This method should not be used for categorical variables. The foward and backward fill also has its pros
+and cons. Even though it is efficient when using large datasets, it can create misleading trends. It is also not suitable for variables that are rapidly changing (heart rate, glucose levels). It can also underestimate variability in the data since it is just filling in the missing values with the same value. 
+
+What are the pros/cons of this approach: A pro of this method is that it maintains a realistic pattern. A con of this approach is that the selected fixed set of observations can vary within the data. 
+
+Include examples showing missing data patterns: For example, missing values between the month of March can be filled with estimates from nearby monthly endpoints. 
+
+
+
+Missing patterns:
+Missing by month:
+date
+1      0
+2     27
+3     30
+4     29
+5     30
+6     29
+7     30
+8     30
+9     29
+10    30
+11    29
+12    30
+Name: temperature, dtype: int64
+
+Missing by day of week:
+date
+0    46
+1    45
+2    47
+3    46
+4    46
+5    47
+6    46
+Name: temperature, dtype: int64
